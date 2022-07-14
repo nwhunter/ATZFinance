@@ -9,11 +9,6 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-
-    <artifactId>ATZ_Finance</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>ATZ_Finance</name>
-    <description>ATZ_Finance</description>
     <artifactId>atz</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>atz</name>

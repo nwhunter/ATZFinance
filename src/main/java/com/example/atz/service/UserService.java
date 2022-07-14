@@ -1,4 +1,15 @@
 package com.example.atz.service;
 
-public class UserService {
+import com.example.atz.model.User;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+
+public interface UserService {
+    List<User> getAllUsers();
+    void saveUser(User user);
+    User getUserById(long sid);
+    Page<User> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection);
 }

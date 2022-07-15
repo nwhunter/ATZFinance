@@ -54,5 +54,17 @@ public class UserController {
         userService.saveUser(user);
         return "redirect:/";
     }
+    @GetMapping("/newLoanApplication")
+    public String showNewLoanApplication(){
+        return "new_loan_application";
+    }
+    @GetMapping("/loanApplicationHistory")
+    public String showLoanApplicationHistory(){
+        return "view_loan_history";
+    }
+    @GetMapping("/home")
+    public String showHome(){
+        return "homepage";
+    }
 
 }

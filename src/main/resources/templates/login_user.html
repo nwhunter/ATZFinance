@@ -9,12 +9,12 @@
 </head>
 <body>
 <div class="container my-2">
-    <h1><center> User Information </center></h1>
+    <h1><center> Login </center></h1>
     <div class="container my-2">
 
         <center>
             <br/>
-            <form action="#" th:action="@{/saveUser}" th:object="${user}"
+            <form action="#" th:action="@{/userLogin}" th:object="${user}"
                   method="POST">
                 <input type="text" th:field="*{userName}"
                        placeholder="Username" class="form-control mb-4 col-4">

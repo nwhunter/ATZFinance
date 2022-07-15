@@ -33,6 +33,13 @@ public class UserController {
         return "new_user";
     }
 
+    @GetMapping("/userLogin")
+    public String userLogin(Model model){
+        User user = new User();
+        model.addAttribute("user", user);
+        return "login_user";
+    }
+
     //display list of courses
     @GetMapping("/userList")
     public String viewUserPage(Model model){

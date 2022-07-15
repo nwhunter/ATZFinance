@@ -66,5 +66,9 @@ public class UserController {
     public String showHome(){
         return "homepage";
     }
+    @GetMapping("/logout")
+    public String showIndex(){
+        return "index";
+    }
 
 }

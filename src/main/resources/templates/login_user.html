@@ -9,10 +9,10 @@
 </head>
 <body>
 <div class="container my-2">
-    <h1><center> Login </center></h1>
+    <h1 style="text-align: center;">Login</h1>
     <div class="container my-2">
 
-        <center>
+        <div style="text-align: center;">
             <br/>
             <form action="#" th:action="@{/userLogin}" th:object="${user}"
                   method="POST">
@@ -26,7 +26,7 @@
                 <a th:href="@{/home}" class="btn btn-info col-2">Login</a>
 
                 <br/>
-        </center>
+        </div>
 
     </div>
 </div>

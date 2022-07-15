@@ -7,10 +7,10 @@
 </head>
 <body>
 <div class="container my-2">
-    <h1><center> User Information </center></h1>
+    <h1 style="text-align: center;">User Information</h1>
     <div class="container my-2">
 
-        <center>
+        <div style="text-align: center;">
             <br/>
             <form action="#" th:action="@{/saveUser}" th:object="${user}"
                   method="POST">
@@ -28,8 +28,7 @@
                 <button type="submit" class="btn btn-info col-2"> Finalize </button>
 
             <br/>
-        </center>
-
+        </div>
     </div>
 </div>
 </body>

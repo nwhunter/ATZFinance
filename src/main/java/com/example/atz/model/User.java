@@ -2,6 +2,8 @@ package com.example.atz.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "user")
@@ -16,6 +18,7 @@ public class User implements Serializable  {
     private String userEmail;
     @Column(name = "user_pasword")
     private String userPassword;
+
 
     public long getUid() {
         return uid;

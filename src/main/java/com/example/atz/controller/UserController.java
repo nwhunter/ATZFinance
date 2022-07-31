@@ -59,7 +59,7 @@ public class UserController {
     }
 
     //Will be built upon in the future, but were just created to handle navigation in the system
-    @GetMapping("/loanApplicationHistory")
+   /* @GetMapping("/loanApplicationHistory")
     public String showLoanApplicationHistory(){
         return "view_loan_history";
     }
@@ -70,6 +70,6 @@ public class UserController {
     @GetMapping("/logout")
     public String showIndex(){
         return "index";
-    }
+    }*/
 
 }

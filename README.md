@@ -7,7 +7,8 @@ Code Refactoring Changes
 - Add comments and documentation on existing code
   - Went back and added nonexistent documentation in the files: User, UserService, UserServiceImpl, UserController, and user Repository.
 - Fix bloating of controller class
-  - {TBD}
+  - To fix the bloating of the controller class (UserController), we have now created the ApplicationController and other MVC related items to handle all actions of the application object. 
+  - In addition, we have also migrated the original UI navigation that handles the application use case navigation to the ApplicationController. 
 - Branch history fix
   - Branch history error has been fixed. New working branch titled 'working_branch' has been set to the main branch. 
 - Fix button declaration 

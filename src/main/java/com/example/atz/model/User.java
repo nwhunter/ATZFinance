@@ -19,7 +19,7 @@ public class User implements Serializable  {
     @Column(name = "user_pasword")
     private String userPassword;
 
-
+//Getters and Setter for User
     public long getUid() {
         return uid;
     }

@@ -25,6 +25,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    //Displays a form to create a new user of the ATZ system
     @GetMapping("/showNewUserForm")
     public String showNewUserForm(Model model){
         //create model attribute to bind form data
@@ -33,6 +34,7 @@ public class UserController {
         return "new_user";
     }
 
+    //Handles the user login for the ATZ system
     @GetMapping("/userLogin")
     public String userLogin(Model model){
         User user = new User();
@@ -48,12 +50,15 @@ public class UserController {
         return "student_list";
     }
 
+    //Saves the new user to the SQL database (has not been set up at the moment)
     @PostMapping("/saveUser")
     public String saveUser(@ModelAttribute("course") User user){
         // save course to database
         userService.saveUser(user);
         return "redirect:/";
     }
+
+    //Will be built upon in the future, but were just created to handle navigation in the system
     @GetMapping("/newLoanApplication")
     public String showNewLoanApplication(){
         return "new_loan_application";

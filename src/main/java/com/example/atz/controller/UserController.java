@@ -59,10 +59,6 @@ public class UserController {
     }
 
     //Will be built upon in the future, but were just created to handle navigation in the system
-    @GetMapping("/newLoanApplication")
-    public String showNewLoanApplication(){
-        return "new_loan_application";
-    }
     @GetMapping("/loanApplicationHistory")
     public String showLoanApplicationHistory(){
         return "view_loan_history";

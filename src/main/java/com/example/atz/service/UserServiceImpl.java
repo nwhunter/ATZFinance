@@ -37,7 +37,6 @@ public class UserServiceImpl implements UserService{
         return user;
     }
 
-
     @Override
     public Page<User> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection){
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :

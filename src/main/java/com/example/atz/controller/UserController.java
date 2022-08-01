@@ -42,10 +42,10 @@ public class UserController {
         return "login_user";
     }
 
-    //display list of courses
+    //display list of users
     @GetMapping("/userList")
     public String viewUserPage(Model model){
-        model.addAttribute("listStudents", userService.getAllUsers());
+        model.addAttribute("listUsers", userService.getAllUsers());
 
         return "user_list";
     }

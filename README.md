@@ -13,4 +13,4 @@ Code Refactoring Changes
   - Branch history error has been fixed. New working branch titled 'working_branch' has been set to the main branch. 
 - Fix button declaration 
 - Get rid of assigned objects that are never accessed 
-
+- Removed the "center" HTML tags and replaced it with updated "style" tag.

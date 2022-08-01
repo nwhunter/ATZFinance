@@ -43,7 +43,7 @@ public class ApplicationController {
     public String saveApplication(@ModelAttribute("application") Application application){
         // save course to database
         applicationService.saveApplication(application);
-        return "redirect:/";
+        return "homepage";
     }
 
     @GetMapping("/loanApplicationHistory")
@@ -57,7 +57,7 @@ public class ApplicationController {
     }
     @GetMapping("/logout")
     public String showIndex(){
-        return "index";
+        return "redirect:/";
     }
 
 }

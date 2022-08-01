@@ -5,6 +5,22 @@
     <title>New Loan Application</title>
 </head>
 <body>
-
+<center><img src="https://i.ibb.co/7nHPB98/Untitled-design.png" alt="Untitled-design" width="1280" height="300" border="0"></center>
+<div class="container my-2" style="text-align: center;">
+    <h1>Loan Application</h1>
+    <p>After submitting your brief loan application our analysts will contact you via email if you are denied or accepted based on credit history. If you are accepted more information will be required to finalize the loan process. Thank you!</p>
+    <div>
+        <br/>
+        <form action="#" th:action="@{/saveApplication}" th:object="${application}" method="POST">
+            <input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{SSN}" placeholder="Social Security Number" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{loanPurpose}" placeholder="Loan Purpose" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{loanAmount}" placeholder="Loan Amount USD" class="form-control mb-4 col-4">
+            <button type="submit" class="btn btn-info col-2"> Finalize </button>
+            <br/>
+        </form>
+    </div>
+</div>
 </body>
 </html>

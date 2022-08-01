@@ -47,7 +47,7 @@ public class UserController {
     public String viewUserPage(Model model){
         model.addAttribute("listStudents", userService.getAllUsers());
 
-        return "student_list";
+        return "user_list";
     }
 
     //Saves the new user to the SQL database (has not been set up at the moment)

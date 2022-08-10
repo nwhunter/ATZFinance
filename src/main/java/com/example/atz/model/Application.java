@@ -2,6 +2,8 @@ package com.example.atz.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -21,6 +23,13 @@ public class Application implements Serializable  {
     private String loanAmount;
     @Column(name = "purpose")
     private String loanPurpose;
+
+    @ManyToMany(cascade = CascadeType.MERGE)
+
+    @JoinTable(name = "user_application",
+            joinColumns = {@JoinColumn(name = "appId")},
+            inverseJoinColumns = {@JoinColumn(name = "uid")})
+    private Set<User> users = new HashSet<>();
 
     public long getAppId() {
         return appId;
@@ -70,4 +79,11 @@ public class Application implements Serializable  {
         this.loanPurpose = loanPurpose;
     }
 
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 }

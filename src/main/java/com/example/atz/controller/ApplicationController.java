@@ -12,8 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.example.atz.service.ApplicationService;
+
+import java.util.List;
 
 @Controller
 
@@ -26,9 +29,6 @@ public class ApplicationController {
     @Autowired
     private UserRepository userRepository;
 
-
-    //Let's see
-    //Will be built upon in the future, but were just created to handle navigation in the system
 
     @GetMapping("/newLoanApplication")
     public String showNewUserForm(Model model){
@@ -46,11 +46,33 @@ public class ApplicationController {
         return "homepage";
     }
 
-    @GetMapping("/loanApplicationHistory")
+    /**@GetMapping("/loanApplicationHistory")
     public String saveLoanApplication(){
 
         return "view_loan_history";
+    }**/
+
+    //display list of applications
+    @GetMapping("/loanApplicationHistory")
+    public String viewApplicationHistory(Model model){
+        model.addAttribute("listApplications", applicationService.getAllApplications());
+
+        return "view_loan_history";
     }
+
+    @GetMapping("/showLoanFormForUpdate/{sid}")
+    public String showStudFormForUpdate(@PathVariable( value = "appId") long appId, Model model){
+
+        // get student from the service
+        Application application = applicationService.getAppById(appId);
+
+
+        // set student as a model attribute to pre-populate the form
+        model.addAttribute("application", application);
+
+        return "update_application";
+    }
+
     @GetMapping("/home")
     public String showHome(){
         return "homepage";

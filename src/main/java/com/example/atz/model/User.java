@@ -1,5 +1,7 @@
 package com.example.atz.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -18,6 +20,10 @@ public class User implements Serializable  {
     private String userEmail;
     @Column(name = "user_pasword")
     private String userPassword;
+
+    @ManyToMany(mappedBy = "users")
+    @JsonIgnore
+    private Set<Application> applications = new HashSet<>();
 
 //Getters and Setter for User
     public long getUid() {
@@ -50,5 +56,13 @@ public class User implements Serializable  {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    public Set<Application> getApplications() {
+        return applications;
+    }
+
+    public void setApplications(Set<Application> applications) {
+        this.applications = applications;
     }
 }

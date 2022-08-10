@@ -38,7 +38,7 @@ public class ApplicationController {
         return "new_loan_application";
     }
 
-    //Saves the new application to the SQL database (has not been set up at the moment)
+    //Saves the new application to the SQL database
     @PostMapping("/saveApplication")
     public String saveApplication(@ModelAttribute("application") Application application){
         // save course to database
@@ -46,16 +46,14 @@ public class ApplicationController {
         return "homepage";
     }
 
-    /**@GetMapping("/loanApplicationHistory")
-    public String saveLoanApplication(){
 
-        return "view_loan_history";
-    }**/
 
     //display list of applications
     @GetMapping("/loanApplicationHistory")
     public String viewApplicationHistory(Model model){
-        model.addAttribute("listApplications", applicationService.getAllApplications());
+        //model.addAttribute("listApplications", applicationService.getAllApplications());
+        List<Application> allApps = applicationService.getAllApplications();
+        model.addAttribute("allApps", allApps);
 
         return "view_loan_history";
     }

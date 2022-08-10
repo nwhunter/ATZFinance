@@ -1,7 +1,6 @@
 package com.example.atz.service;
 
 import com.example.atz.model.Application;
-import com.example.atz.model.User;
 import com.example.atz.repository.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

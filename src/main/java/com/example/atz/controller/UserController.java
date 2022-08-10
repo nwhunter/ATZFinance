@@ -73,18 +73,4 @@ public class UserController {
         return "register_success";
     }
 
-    //Will be built upon in the future, but were just created to handle navigation in the system
-   /* @GetMapping("/loanApplicationHistory")
-    public String showLoanApplicationHistory(){
-        return "view_loan_history";
-    }
-    @GetMapping("/home")
-    public String showHome(){
-        return "users";
-    }
-    @GetMapping("/logout")
-    public String showIndex(){
-        return "index";
-    }*/
-
 }

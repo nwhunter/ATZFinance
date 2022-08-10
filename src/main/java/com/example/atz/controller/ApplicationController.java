@@ -2,8 +2,7 @@ package com.example.atz.controller;
 
 
 import com.example.atz.model.Application;
-import com.example.atz.model.User;
-import com.example.atz.repository.UserRepository;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,9 +24,6 @@ public class ApplicationController {
 
     @Autowired
     private ApplicationService applicationService;
-
-    @Autowired
-    private UserRepository userRepository;
 
 
     @GetMapping("/newLoanApplication")

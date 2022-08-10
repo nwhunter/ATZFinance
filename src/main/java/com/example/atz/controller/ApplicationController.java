@@ -43,7 +43,7 @@ public class ApplicationController {
     public String saveApplication(@ModelAttribute("application") Application application){
         // save course to database
         applicationService.saveApplication(application);
-        return "homepage";
+        return "users";
     }
 
 
@@ -51,7 +51,6 @@ public class ApplicationController {
     //display list of applications
     @GetMapping("/loanApplicationHistory")
     public String viewApplicationHistory(Model model){
-        //model.addAttribute("listApplications", applicationService.getAllApplications());
         List<Application> allApps = applicationService.getAllApplications();
         model.addAttribute("allApps", allApps);
 
@@ -73,7 +72,7 @@ public class ApplicationController {
 
     @GetMapping("/home")
     public String showHome(){
-        return "homepage";
+        return "users";
     }
     @GetMapping("/logout")
     public String showIndex(){

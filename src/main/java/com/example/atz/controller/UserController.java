@@ -80,7 +80,7 @@ public class UserController {
     }
     @GetMapping("/home")
     public String showHome(){
-        return "homepage";
+        return "users";
     }
     @GetMapping("/logout")
     public String showIndex(){

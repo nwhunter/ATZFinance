@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User implements Serializable  {
 
     @Id
@@ -16,9 +16,9 @@ public class User implements Serializable  {
     private long uid;
     @Column(name = "user_name")
     private String userName;
-    @Column(name = "user_email")
+    @Column(name = "user_email", unique = true, length = 45)
     private String userEmail;
-    @Column(name = "user_pasword")
+    @Column(name = "user_password", nullable = false, length = 64)
     private String userPassword;
 
     @ManyToMany(mappedBy = "users")

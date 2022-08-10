@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.example.atz.service.UserService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.util.List;
 
 @Controller
 
@@ -43,11 +46,12 @@ public class UserController {
     }
 
     //display list of users
-    @GetMapping("/userList")
+    @GetMapping("/users")
     public String viewUserPage(Model model){
-        model.addAttribute("listUsers", userService.getAllUsers());
+        List<User> listUsers = userRepository.findAll();
+        model.addAttribute("listUsers", listUsers);
 
-        return "user_list";
+        return "users";
     }
 
     //Saves the new user to the SQL database (has not been set up at the moment)
@@ -56,6 +60,17 @@ public class UserController {
         // save course to database
         userService.saveUser(user);
         return "redirect:/";
+    }
+
+    @PostMapping("/process_register")
+    public String processRegister(User user) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(user.getUserPassword());
+        user.setUserPassword(encodedPassword);
+
+        userRepository.save(user);
+
+        return "register_success";
     }
 
     //Will be built upon in the future, but were just created to handle navigation in the system

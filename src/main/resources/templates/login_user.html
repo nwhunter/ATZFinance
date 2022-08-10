@@ -10,10 +10,10 @@
 <div class="container my-2" style="text-align: center;">
     <h1 style="text-align: center;">Login</h1>
     <br/>
-    <form action="#" th:action="@{/userLogin}" th:object="${user}" method="POST">
+    <form action="#" th:action="@{/login}" th:object="${user}" method="POST">
         <input type="text" th:field="*{userName}" placeholder="Username" class="form-control mb-4 col-4">
         <input type="text" th:field="*{userPassword}" placeholder="Password" class="form-control mb-4 col-4">
-        <a th:href="@{/home}" class="btn btn-info col-2">Login</a>
+        <button type="submit">Submit</button>
         <br/>
     </form>
 </div>
